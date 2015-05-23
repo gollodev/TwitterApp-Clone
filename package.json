@@ -1,0 +1,55 @@
+{
+  "name": "expressjs-bootstrapping",
+  "version": "1.0.0",
+  "description": "Skeleton y bootstrapping ExpressJS Application ",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GolloDev/expressjs-bootstrapping.git"
+  },
+  "keywords": [
+    "skeleton",
+    "bootstrapping",
+    "expressjs",
+    "jade",
+    "mocha",
+    "nodemon",
+    "nodeinspector"
+  ],
+  "author": "Jose Lopez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GolloDev/expressjs-bootstrapping/issues"
+  },
+  "homepage": "https://github.com/GolloDev/expressjs-bootstrapping",
+  "dependencies": {
+    "body-parser": "^1.10.2",
+    "connect-redis": "^2.3.0",
+    "cookie-parser": "^1.3.3",
+    "errorhandler": "^1.3.2",
+    "express": "^4.11.0",
+    "express-session": "^1.11.1",
+    "jade": "^1.9.0",
+    "method-override": "^2.3.1",
+    "mongoose": "^3.8.21",
+    "morgan": "^1.5.1",
+    "passport": "^0.2.1",
+    "passport-twitter": "^1.0.3",
+    "serve-favicon": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "lost": "^6.1.1",
+    "mocha": "^2.1.0",
+    "nib": "^1.1.0",
+    "rupture": "^0.6.1",
+    "stylus": "^0.49.3",
+    "typographic": "^2.9.3"
+  }
+}
