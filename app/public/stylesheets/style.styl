@@ -1,0 +1,72 @@
+@import 'nib';
+@import 'lost';
+@import 'rupture';
+@import 'typographic';
+@import 'base/*';
+
+body
+	background-color $teal
+
+h1
+	font-family $futura	
+	text-align center
+	color $clouds
+	margin 0
+	t-h1()
+	
+#container-title
+	margin-top 200px
+				
+form
+	position relative
+	
+#form-container
+	column('1/1')
+	
+
+button[name="button-enter"]
+	t-button()
+	width 220px
+	height 50px
+	border-radius 3px 
+	border none
+	background-color $clouds
+	border-bottom 5px solid $silver	
+	color $teal
+	outline none
+	transition box-shadow 0.5s
+	.button-intro
+		font-family $helvetica
+		font-size 1.2rem
+		p
+			position relative
+			left 0.8em
+			top 0.3em
+			margin 0 auto
+		.container-icon-tw
+			position relative
+			left -3.1em
+			top -0.66em
+	&:hover
+		box-shadow 1px 1px 10px #ffff	
+	
+#button-container
+	margin-top 40px
+	center(221px)	
+
+footer
+	#footer-container
+		margin-top 350px
+		color $clouds
+		font-family $helvetica 
+		font-size $min-font 
+		.credit
+			center(110px)			
+			a
+				text-decoration none
+				color $clouds				
+				&:hover
+					text-decoration underline 
+				
+				
+
