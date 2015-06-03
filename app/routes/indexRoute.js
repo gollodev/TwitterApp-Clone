@@ -1,5 +1,3 @@
-var express = require('express');
-//var router = express.Router();
 var indexController = require('../controllers/indexController');
 
   
@@ -14,13 +12,21 @@ module.exports = function(app, passport) {
     // route for showing the profile page
     app.get('/dashboard', isLoggedIn, function(req, res) {
         res.render('dashboard', {
-            user : req.user // get the user out of session and pass to template
+            user: req.user.username
+        });
+        req.session.save(function(err) {
+          if (err) console.log('Session Error! ' + err);
+          console.log('Save Session!');
         });
     });
 
     // route for logging out
     app.get('/logout', function(req, res) {
         req.logout();
+        req.session.destroy(function(err) {
+          if (err) console.log('Session Destroy Error! ' + err);
+          console.log('Destroy Session!');
+        });
         res.redirect('/');
     });    
 
@@ -34,7 +40,9 @@ module.exports = function(app, passport) {
     app.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
             successRedirect : '/dashboard',
-            failureRedirect : '/'
+            failureRedirect : '/',
+            successFlash: 'Welcome!',
+            failureFlash: 'Invalid LogIn'
         }));  
 
 };
