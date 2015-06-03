@@ -1,15 +1,23 @@
-var mongoose = require('mongoose');
-var	Schema 	 = mongoose.Schema;
+var mongoose = require('mongoose'),
+	Schema 	 = mongoose.Schema;
 
-mongoose.connect('mongodb://127.0.0.1:3000/twDB');
+// Moongose Connect DB
+mongoose.connect('mongodb://127.0.0.1/twDB');
 var db = mongoose.connection;
+
+// Events Moongose Connection
 db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (conn) {
-  	console.log('Connected! ' + conn);
+
+db.once('open', function () {
+  	console.log('Connected!');
+});
+
+db.on('close', function () {
+	console.log('Close Connection!');
 });
 
 var UserSchema = new Schema ({
-	 id           : String,
+	 _id          : Number,
      token        : String,
      displayName  : String,
      username     : String
