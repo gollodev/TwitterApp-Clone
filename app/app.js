@@ -1,26 +1,25 @@
 /**
  * Modules Dependencies
  */
-var express        = require('express');
-var app	     	   = express();
-var bodyParser     = require('body-parser');
-var methodOverride = require('method-override');
-var path  		   = require('path');	
-var cookieParser   = require('cookie-parser');
-var session 	   = require('express-session');
-var RedisStore 	   = require('connect-redis')(session);
-var passport 	   = require('passport');
-var logger 	       = require('morgan');
-var errorHandler   = require('errorhandler');
+var express        = require('express'),
+	app	     	   = express(),
+	bodyParser     = require('body-parser'),
+	methodOverride = require('method-override'),
+	path  		   = require('path'),	
+	cookieParser   = require('cookie-parser'),
+	session 	   = require('express-session'),
+	RedisStore 	   = require('connect-redis')(session),
+	passport 	   = require('passport'),
+	logger 	       = require('morgan'),
+	errorHandler   = require('errorhandler'),
+	flash          = require('connect-flash');
 
 
 /**
  * Routes
  */
-var indexRoute = require('./routes/indexRoute');
-var configPassport = require('./config/passport');
-
-
+var indexRoute 	   = require('./routes/indexRoute'),
+    configPassport = require('./config/passport');
 
 /**
  * Middlewares
@@ -48,6 +47,7 @@ app.use(session({
 // use passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 indexRoute(app, passport);
 configPassport(passport);
@@ -64,5 +64,6 @@ if ('development' == app.get('env')) {
 app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
 
 
