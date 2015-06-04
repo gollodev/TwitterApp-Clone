@@ -20,7 +20,8 @@ var UserSchema = new Schema ({
 	 _id          : Number,
      token        : String,
      displayName  : String,
-     username     : String
+     username     : String,
+     avatar		  : String
 });
 
 module.exports = mongoose.model('User', UserSchema);
