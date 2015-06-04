@@ -29,7 +29,7 @@ module.exports = function (passport) {
     // User.findOne won't fire until we have all our data back from Twitter
         process.nextTick(function() {
 
-            UserModel.findOne({ _id : profile.id }, function(err, user) {
+            UserModel.findOne({ _id: profile.id }, function(err, user) {
 
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database
@@ -44,7 +44,8 @@ module.exports = function (passport) {
                         _id         : profile.id,
                         token       : token,
                         username    : profile.username,
-                        displayName : profile.displayName
+                        displayName : profile.displayName,
+                        avatar      : profile.photos[0].value
                     });                   
 
                     // save our user into the database
