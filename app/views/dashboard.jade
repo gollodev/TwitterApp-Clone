@@ -1,3 +1,8 @@
 h2 Dashboard 
-h3!= user
-  a(href="/logout") Logout
+if (user)
+	ul
+		li
+			img(src="#{ user.avatar }")
+		li Welcome #{ user.displayName }
+		li 
+			a(href="/logout") Logout
