@@ -12,8 +12,9 @@ module.exports = function(app, passport) {
     // route for showing the profile page
     app.get('/dashboard', isLoggedIn, function(req, res) {
         res.render('dashboard', {
-            user: req.user.username
+            user: req.user
         });
+
         req.session.save(function(err) {
           if (err) console.log('Session Error! ' + err);
           console.log('Save Session!');
