@@ -4,26 +4,28 @@
 @import 'typographic';
 @import 'base/*';
 
+$gutter = 20px
+
 body
 	background-color $teal
 
-h1
-	font-family $futura	
-	text-align center
-	color $clouds
-	margin 0
-	t-h1()
+li 
+	display inline-block
+img					
+	max-width 100%
+	height auto
+	border-radius 100%
+a					
+	text-decoration none					
+	color $primary-text						
+	transition color 0.5s
+	&:hover
+		color $teal	
+		
+section
+	clearfix()
+	margin-top 2em
 	
-#container-title
-	margin-top 200px
-				
-form
-	position relative
-	
-#form-container
-	column('1/1')
-	
-
 button[name="button-enter"]
 	t-button()
 	width 220px
@@ -48,7 +50,25 @@ button[name="button-enter"]
 			left -3.1em
 			top -0.66em
 	&:hover
-		box-shadow 1px 1px 10px #ffff	
+		box-shadow 1px 1px 10px #ffff
+		
+h1
+	font-family $futura	
+	text-align center
+	color $clouds
+	margin 0
+	t-h1()
+	
+#container-title
+	margin-top 200px
+				
+form
+	position relative
+	
+	
+#form-container
+	column('1/1')
+	
 	
 #button-container
 	margin-top 40px
@@ -67,6 +87,76 @@ footer
 				color $clouds				
 				&:hover
 					text-decoration underline 
-				
-				
 
+header	
+	background-color $clouds
+	border-bottom 3px solid $silver
+	center()
+	nav
+		font-family $header-font
+		color $primary-text		 
+		column('1/1')
+		.logo
+			font-size $max-font			
+			column('1/2')		
+		.main-nav
+			font-size 1rem
+			reset-gutter()			
+			column('1/2')
+			.welcome
+				column('1/2')
+				.welcome-text						
+					column('1/3')	
+					position relative
+					top 18px										
+			.logout
+				column('1/2')
+				.logout-text
+					move('2/4')
+					position relative
+					top 12px	
+		
+.wrapper	
+	center()
+	.container-message
+		column('1/2')		
+		border-radius 2px		
+		.box-message
+			column('1/1')
+			move('1/12')			
+			.container-form-message
+				column('1/1')
+				#form-message								
+					.input-message								
+						margin-right 12px	
+						width 400px
+						border 1px solid $silver
+						border-radius 5px
+						height 30px
+						transition height .5s						
+						&:focus
+							height 150px																					
+					.button-message						
+						width 405px	
+						height 40px							
+						border-radius 3px 
+						border none
+						background-color $clouds
+						border-bottom 5px solid $silver	
+						font-family $helvetica
+						font-size 1.2rem
+						color $teal
+						outline none
+						transition box-shadow 0.5s
+						&:hover
+							box-shadow 1px 1px 10px #ffff								
+	.container-content	
+		column('1/2')			
+		background-color $clouds
+		border-radius 2px
+		
+	
+				
+				
+			
+			
