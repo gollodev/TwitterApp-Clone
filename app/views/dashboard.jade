@@ -1,8 +1,25 @@
-h2 Dashboard 
+include ./head
 if (user)
-	ul
-		li
-			img(src="#{ user.avatar }")
-		li Welcome #{ user.displayName }
-		li 
-			a(href="/logout") Logout
+	header
+		nav
+			h2.logo!=title 
+			ul.main-nav
+				li.welcome
+					span.welcome-text Welcome
+					img.welcome-avatar(src="#{ user.avatar }" alt="#{ user.displayName }")			
+				li.logout
+					a.logout-text(href="/logout") 
+						i.fa.fa-sign-out.fa-2x
+	section#main-content.wrapper
+		.container-message
+			.box-message				
+				.container-form-message
+					form(id="form-message", method="", action="")					
+						textarea.input-message(rows="4" cols="50" placeholder="What so dude?" maxlength="120")
+						button.button-message(type="submit", ) Tweet!
+		.container-content
+			span box content
+		
+		
+
+
