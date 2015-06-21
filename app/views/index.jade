@@ -1,12 +1,5 @@
-doctype html
-html(lang="en")
-  head
-    title!= title
-    link(rel="stylesheet", type="text/css", href="stylesheets/style.css")
-    link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+include ./head  
   body
     h1#container-title!= welcome
     include ./form.jade  
-  include ./footer.jade
-      
-  
+  include ./footer.jade  
