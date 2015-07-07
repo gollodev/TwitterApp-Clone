@@ -1,7 +1,7 @@
 
 var TwitterStrategy  = require('passport-twitter').Strategy,
     configTwitter    = require('./configTwitter'),
-    UserModel		 = require('../models/UserModel');
+    UserModel        = require('../models/UserModel');
 
 module.exports = function (passport) {
 
