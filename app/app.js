@@ -1,20 +1,20 @@
 /**
  * Modules Dependencies
  */
-var 	express        = require('express'),
-	app	       = express(),	
-	bodyParser     = require('body-parser'),
-	methodOverride = require('method-override'),
-	path 	       = require('path'),
-	cookieParser   = require('cookie-parser'),
-	session        = require('express-session'),
-	RedisStore     = require('connect-redis')(session),
-	passport       = require('passport'),
-	logger         = require('morgan'),
-	errorHandler   = require('errorhandler'),
-	flash          = require('connect-flash'),
-	http 	       = require('http').Server(app),
- 	io 	       = require('socket.io')(http);	
+var express        = require('express'),
+    app	       	   = express(),	
+    bodyParser     = require('body-parser'),
+    methodOverride = require('method-override'),
+    path 	   = require('path'),
+    cookieParser   = require('cookie-parser'),
+    session        = require('express-session'),
+    RedisStore     = require('connect-redis')(session),
+    passport       = require('passport'),
+    logger         = require('morgan'),
+    errorHandler   = require('errorhandler'),
+    flash          = require('connect-flash'),
+    http 	   = require('http').Server(app),
+    io 	   	   = require('socket.io')(http);	
 
 
 /**
