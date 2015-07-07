@@ -1,11 +1,11 @@
 /**
  * Modules Dependencies
  */
-var express    	   = require('express'),
-	app			   = express(),	
+var 	express        = require('express'),
+	app	       = express(),	
 	bodyParser     = require('body-parser'),
 	methodOverride = require('method-override'),
-	path 		   = require('path'),
+	path 	       = require('path'),
 	cookieParser   = require('cookie-parser'),
 	session        = require('express-session'),
 	RedisStore     = require('connect-redis')(session),
@@ -13,16 +13,16 @@ var express    	   = require('express'),
 	logger         = require('morgan'),
 	errorHandler   = require('errorhandler'),
 	flash          = require('connect-flash'),
-	http 		   = require('http').Server(app),
- 	io 			   = require('socket.io')(http);	
+	http 	       = require('http').Server(app),
+ 	io 	       = require('socket.io')(http);	
 
 
 /**
  * Routes
  */
-var indexRoute = require('./routes/indexRoute'),
-	configPassport = require('./config/passport'),
-	tweet 		   = require('./controllers/tweetController');
+var indexRoute 	   = require('./routes/indexRoute'),
+    configPassport = require('./config/passport'),
+    tweet          = require('./controllers/tweetController');
 
 /**
  * Middlewares
